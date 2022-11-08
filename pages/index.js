@@ -18,7 +18,7 @@ export default function Home() {
           <div class="flex justify-between pt-10">
 
             <span class="fond-bpld text-3xl">
-              Tailwind
+              Tailwindddd
             </span>
 
             <div class="space-x-5">
