@@ -44,6 +44,13 @@ export default function Home() {
             <div class="space-x-5">
               <a href="" class="hover:underline">About</a>
               <a href="" class="hover:underline">Contacts</a>
+              
+              <button type="button" onClick={openModal}>
+                 Pay
+               </button>
+            
+              
+              
             </div>
           </div>
         </header> 
@@ -62,7 +69,7 @@ export default function Home() {
         </div>
 
         <h2>Form for registranion</h2>
-        
+
         <div class="midle">
           <div class="pt-10 md:space-y-0 px-3 sm:px-0">
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -74,13 +81,6 @@ export default function Home() {
 
             </form>
           </div>
-        </div>
-
-        <div class="footer">
-          <p>To pay, click "Pay"</p>
-          <button type="button" onClick={openModal}>
-            Pay
-          </button>
         </div>
 
         <Transition appear show={isOpen} as={Fragment}>

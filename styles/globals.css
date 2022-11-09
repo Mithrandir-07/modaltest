@@ -25,12 +25,6 @@ div.midle{
   border-radius: 20px;
 }
 
-div.footer{
-  background-color: #2da05d;
-  display: flex;
-  justify-content: end;
-}
-
 h1 {
   font-weight: 100;
   color: white;
@@ -123,7 +117,6 @@ input[type="submit"] {
 }
 
 button[type="button"] {
-  display: block;
   appearance: none;
   background: rgb(31, 33, 168);
   color: white;
@@ -139,17 +132,6 @@ button[type="button"]:hover{
 
 hr {
   margin-top: 30px;
-}
-
-button {
-  display: block;
-  appearance: none;
-  margin-top: 40px;
-  border: 1px solid #333;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  padding: 10px 20px;
-  border-radius: 4px;
 }
 
 input[type="number"]{
