@@ -22,7 +22,6 @@ h1 {
   color: white;
   text-align: center;
   padding-bottom: 10px;
-  border-bottom: 1px solid rgb(79, 98, 148);
 }
 
 .form {
@@ -104,12 +103,16 @@ input[type="submit"] {
 button[type="button"] {
   display: block;
   appearance: none;
-  background: #333;
+  background: rgb(31, 33, 168);
   color: white;
   border: none;
   text-transform: uppercase;
   padding: 10px 20px;
-  border-radius: 4px;
+  border-radius: 30px;
+}
+
+button[type="button"]:hover{
+  background-color: #2176bd;
 }
 
 hr {
