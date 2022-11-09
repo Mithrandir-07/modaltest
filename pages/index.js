@@ -1,21 +1,15 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import { Dialog, Transition } from '@headlessui/react'
-import { Fragment, useState } from 'react'
 import { useForm } from "react-hook-form";
 
 
-export default function MyModal() {
-  let [isOpen, setIsOpen] = useState(true)
+export default function Home() {
+  const {register, handleSubmit, watch, formState: { errors }} =useForm();
+  const onSubmit = data => console.log(data);
 
-  function closeModal() {
-    setIsOpen(false)
-  }
+  console.log(watch("example"));
 
-  function openModal() {
-    setIsOpen(true)
-  }
   return (
     <div className={styles.container}>
       <Head>
@@ -26,74 +20,45 @@ export default function MyModal() {
 
       <main className={styles.main}>
 
-        <div className="fixed inset-0 flex items-center justify-center">
-          <button
-            type="button"
-            onClick={openModal}
-            className="rounded-full bg-black px-4 py-2 text-sm font-medium text-white hover:bg-green-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
-          >
-            Open dialog
-          </button>
+        <header class="container mx-auto px-5">
+
+          <div class="flex justify-between pt-10">
+
+            <span class="fond-bpld text-3xl">
+              Tailwind
+            </span>
+
+            <div class="space-x-5">
+              <a href="" class="hover:underline">About</a>
+              <a href="" class="bg-red-500 py-2 px-4 rounded-full hover:bg-red-700">Contacts</a>
+            </div>
+          </div>
+        </header> 
+
+        <div class="container mx-auto py-big px-3 sm:px-0">
+          <h1 class="text-center text-3xl fond-bold">TailwindCSS</h1>
+          <p class="pt-3 w-full sm:w-[450px] mx-auto ">The quickest way to start using Tailwind CSS in your Next.js project is to use the Next.js + Tailwind CSS Example. This will automatically configure your Tailwind setup based on the official Next.js example. If you'd like to configure Tailwind manually, continue with the rest of this guide.</p>
+        </div>   
+
+        <div class="flex justify-center space-x-0 md:space-x-10 flex-col md:flex-row space-y-5 md:space-y-0 px-3 sm:px-0">
+          <div class="bg-red-500 py-2 px-4 rounded-full hover:bg-red-700">Button1</div>
+          <div class="bg-red-500 py-2 px-4 rounded-full hover:bg-red-700">Button2</div>
+          <div class="bg-red-500 py-2 px-4 rounded-full hover:bg-red-700">Button3</div>
+          <div class="bg-red-500 py-2 px-4 rounded-full hover:bg-red-700">Button4</div>
+          <div class="bg-red-500 py-2 px-4 rounded-full hover:bg-red-700">Button5</div>
         </div>
 
+        <div class="pt-10 md:space-y-0 px-3 sm:px-0">
+          <form onSubmit={handleSubmit(onSubmit)}>
 
-        <Transition appear show={isOpen} as={Fragment}>
-          <Dialog as="div" className="relative z-10" onClose={closeModal}>
-            <Transition.Child
-              as={Fragment}
-              enter="ease-out duration-300"
-              enterFrom="opacity-0"
-              enterTo="opacity-100"
-              leave="ease-in duration-200"
-              leaveFrom="opacity-100"
-              leaveTo="opacity-0"
-            >
-              <div className="fixed inset-0 bg-black bg-opacity-25" />
-            </Transition.Child>
+            <input {...register("firstName", { required: true, maxLength: 20 })} />
+            <input {...register("lastName", { pattern: /^[A-Za-z]+$/i })} />
+            <input type="number" {...register("age", { min: 18, max: 99 })} />
+            <input type="submit" />
 
-            <div className="fixed inset-0 overflow-y-auto">
-              <div className="flex min-h-full items-center justify-center p-4 text-center">
-                <Transition.Child
-                  as={Fragment}
-                  enter="ease-out duration-300"
-                  enterFrom="opacity-0 scale-95"
-                  enterTo="opacity-100 scale-100"
-                  leave="ease-in duration-200"
-                  leaveFrom="opacity-100 scale-100"
-                  leaveTo="opacity-0 scale-95"
-                >
-                  <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
-                    <Dialog.Title
-                      as="h3"
-                      className="text-lg font-medium leading-6 text-gray-900"
-                    >
-                      Payment successful
-                    </Dialog.Title>
-                    <div className="mt-2">
-                      <p className="text-sm text-gray-500">
-                        Your payment has been successfully submitted. We’ve sent
-                        you an email with all of the details of your order.
-                      </p>
-                    </div>
-
-                    <div className="mt-4">
-                      <button
-                        type="button"
-                        className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                        onClick={closeModal}
-                      >
-                        Got it, thanks!
-                      </button>
-                    </div>
-                  </Dialog.Panel>
-                </Transition.Child>
-              </div>
-            </div>
-          </Dialog>
-        </Transition>
-
+          </form>
+        </div>
       </main>
-
     </div> 
   )
 }
