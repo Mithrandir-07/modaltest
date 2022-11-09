@@ -17,11 +17,27 @@ form {
   margin: 0 auto;
 }
 
+div.puf{
+  margin: 0 auto;
+  width: 550px;;
+  height: 320px;
+  background-color: #063f6e;
+  border-radius: 20px;
+}
+
 h1 {
   font-weight: 100;
   color: white;
   text-align: center;
   padding-bottom: 10px;
+}
+
+h2{
+  font-size: 20px;
+  text-align: center;
+  font-weight: 100;
+  margin-top: 50px;
+  margin-bottom: 20px;
 }
 
 .form {

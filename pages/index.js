@@ -60,18 +60,19 @@ export default function Home() {
           <div class="bg-red-500 py-2 px-4 rounded-full hover:bg-red-700">Button4</div>
           <div class="bg-red-500 py-2 px-4 rounded-full hover:bg-red-700">Button5</div>
         </div>
+        <h2>Form for registranion</h2>
+        <div class="puf">
+          <div class="pt-10 md:space-y-0 px-3 sm:px-0">
+            <form onSubmit={handleSubmit(onSubmit)}>
 
-        <div class="pt-10 md:space-y-0 px-3 sm:px-0">
-          <form onSubmit={handleSubmit(onSubmit)}>
+              <input {...register("firstName", { required: true, maxLength: 20 })} />
+              <input {...register("lastName", { pattern: /^[A-Za-z]+$/i })} />
+              <input type="number" {...register("age", { min: 18, max: 99 })} />
+              <input type="submit" />
 
-            <input {...register("firstName", { required: true, maxLength: 20 })} />
-            <input {...register("lastName", { pattern: /^[A-Za-z]+$/i })} />
-            <input type="number" {...register("age", { min: 18, max: 99 })} />
-            <input type="submit" />
-
-          </form>
+            </form>
+          </div>
         </div>
-
         <div className=" inset-0 flex items-center justify-center">
           <button
             type="button"
