@@ -17,12 +17,18 @@ form {
   margin: 0 auto;
 }
 
-div.puf{
+div.midle{
   margin: 0 auto;
   width: 550px;;
   height: 320px;
   background-color: #063f6e;
   border-radius: 20px;
+}
+
+div.footer{
+  background-color: #2da05d;
+  display: flex;
+  justify-content: end;
 }
 
 h1 {

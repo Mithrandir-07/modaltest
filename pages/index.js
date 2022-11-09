@@ -60,8 +60,10 @@ export default function Home() {
           <div class="bg-red-500 py-2 px-4 rounded-full hover:bg-red-700">Button4</div>
           <div class="bg-red-500 py-2 px-4 rounded-full hover:bg-red-700">Button5</div>
         </div>
+
         <h2>Form for registranion</h2>
-        <div class="puf">
+        
+        <div class="midle">
           <div class="pt-10 md:space-y-0 px-3 sm:px-0">
             <form onSubmit={handleSubmit(onSubmit)}>
 
@@ -73,13 +75,11 @@ export default function Home() {
             </form>
           </div>
         </div>
-        <div className=" inset-0 flex items-center justify-center">
-          <button
-            type="button"
-            onClick={openModal}
-            class="justify-content-botoom"
-          >
-            Open modal
+
+        <div class="footer">
+          <p>To pay, click "Pay"</p>
+          <button type="button" onClick={openModal}>
+            Pay
           </button>
         </div>
 
